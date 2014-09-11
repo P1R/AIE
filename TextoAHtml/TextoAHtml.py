@@ -2,7 +2,7 @@
 import sys
 
 Help="ERROR - Wrong Parameters :(\n the way to do it is: TextoAHtml.py -i inputfile.txt -o outputfile.html"
-Example="./TextoAHtml.py -i prueba.txt -o prueba.html"
+Example="EXAMPLE- ./TextoAHtml.py -i prueba.txt -o prueba.html"
 if __name__ == "__main__":
 #   verificamos que existan los 5 argumentos
     if(len(sys.argv) == 5):
