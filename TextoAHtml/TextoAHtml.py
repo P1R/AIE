@@ -40,9 +40,13 @@ if __name__ == "__main__":
         OuFile.writelines(htmtags.getHead())
         line=InFile.readline()
         OuFile.writelines((htmtags.getTitle(),line,htmtags.getTitlend()))
-#   Se escribe la variable "line" en el archivo de salida
         OuFile.writelines(htmtags.getBody())
         OuFile.writelines(line)
+#   Inicio de ciclo hasta EOF
+        while True:
+            line=InFile.readline()
+            if not line: break
+            OuFile.writelines(line)
         OuFile.writelines(htmtags.getBodyend())
         print htmtags.HexRand()
     else:
