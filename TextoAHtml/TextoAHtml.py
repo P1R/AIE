@@ -1,5 +1,6 @@
 #!/usr/bin/env python2 
 import sys
+from random import randrange
 
 Help="ERROR - Wrong Parameters :(\n\t the way to do it is: TextoAHtml.py -i inputfile.txt -o outputfile.html"
 Example="EXAMPLE- ./TextoAHtml.py -i prueba.txt -o prueba.html"
@@ -23,6 +24,8 @@ class htm:
         return self.body
     def getBodyend(self):
         return self.bodyend
+    def HexRand(self):
+        return "#%s" % "".join([hex(randrange(0, 255))[2:] for i in range(3)])
 
 if __name__ == "__main__":
 #   verificamos que existan los 5 argumentos
@@ -41,7 +44,7 @@ if __name__ == "__main__":
         OuFile.writelines(htmtags.getBody())
         OuFile.writelines(line)
         OuFile.writelines(htmtags.getBodyend())
-
+        print htmtags.HexRand()
     else:
         print Help
         print Example
