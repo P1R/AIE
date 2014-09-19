@@ -14,6 +14,7 @@ class htm:
         self.body="</head>\n<body>\n"
         self.bodyend="</body>\n</html>"
         self.divend="</div>\n"
+        self.br="<br>"
 #   se utilizan funciones get para regresar cadenas de etiquetas html
     def getHead(self):
         return self.head
@@ -25,6 +26,8 @@ class htm:
         return self.body
     def getBodyend(self):
         return self.bodyend
+    def getBr(self):
+        return self.br
 #   generador de numero aleatorios para colores en formato html
     def HexRand(self):
         return "#%s" % "".join([hex(randrange(0, 255))[2:] for i in range(3)])
@@ -53,6 +56,8 @@ if __name__ == "__main__":
         while True:
             line=InFile.readline()
             if not line: break
+#   si ecuentra salto de linea ingresa codigo <br> en html
+            if (line == '\n'): OuFile.writelines(htmtags.getBr())
 #   Agregamos las divs con los colores generados aleatorios,linealeida,divend
             OuFile.writelines((htmtags.Divs(),line,htmtags.getDivend()))
         OuFile.writelines(htmtags.getBodyend())
