@@ -41,6 +41,9 @@ if __name__ == "__main__":
 #   verificamos que existan los 5 argumentos
     if(len(sys.argv) == 5):
         print "Opening " + sys.argv[2]
+        state = 0
+        countp = 0
+        countw = 0
         htmtags = htm()
 #   Creamos Variable de tipo archivo en modo "universal newline" que da compatibilidad nombre de arg 2
 #   Ademas de la variable  con el cuarto argumento que es el nombre a escribir en modo escritura
@@ -52,14 +55,31 @@ if __name__ == "__main__":
         OuFile.writelines((htmtags.getTitle(),line,htmtags.getTitlend()))
         OuFile.writelines(htmtags.getBody())
         OuFile.writelines(line)
+
 #   Inicio de ciclo hasta EOF
         while True:
             line=InFile.readline()
             if not line: break
+
+            if state == 1:
+                if (line.find(".\n")!=-1):
+                    OuFile.writelines(htmtags.getDivend())
+                    state=0
+
+            if state == 0:  
+                if (line.find(".\n")!=-1):
+                    OuFile.writelines(htmtags.Divs())
+                    state=1
+                    countp+=1
 #   si ecuentra salto de linea ingresa codigo <br> en html
-            if (line == '\n'): OuFile.writelines(htmtags.getBr())
-#   Agregamos las divs con los colores generados aleatorios,linealeida,divend
-            OuFile.writelines((htmtags.Divs(),line,htmtags.getDivend()))
+            if (line == '\n'):
+                OuFile.writelines(htmtags.getBr())
+#   cuenta palabras
+            countw+=len(line.split())
+            OuFile.writelines(line)
+        OuFile.writelines(("</div><br><h2> numero de parrafos es:",str(countp+1),"</h2>"))
+        OuFile.writelines(("<br><h2> numero de palabras es:",str(countw),"</h2>"))
+
         OuFile.writelines(htmtags.getBodyend())
     else:
         print Help
