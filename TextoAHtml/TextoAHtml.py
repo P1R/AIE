@@ -41,9 +41,12 @@ if __name__ == "__main__":
 #   verificamos que existan los 5 argumentos
     if(len(sys.argv) == 5):
         print "Opening " + sys.argv[2]
+#   variable que detecta si estas dentro o fuera de un parrafo
         state = 0
+#   Agregamos contadores de parrafos y de palabras
         countp = 0
         countw = 0
+#creamos el objeto para las etiquetas en html
         htmtags = htm()
 #   Creamos Variable de tipo archivo en modo "universal newline" que da compatibilidad nombre de arg 2
 #   Ademas de la variable  con el cuarto argumento que es el nombre a escribir en modo escritura
@@ -60,12 +63,12 @@ if __name__ == "__main__":
         while True:
             line=InFile.readline()
             if not line: break
-
+#   verificamos si estamos dentro de parrafo y en dado caso agregamos div con color y letra
             if state == 1:
                 if (line.find(".\n")!=-1):
                     OuFile.writelines(htmtags.getDivend())
                     state=0
-
+#   verificamos si se salio del parrafo y cerramos el div
             if state == 0:  
                 if (line.find(".\n")!=-1):
                     OuFile.writelines(htmtags.Divs())
