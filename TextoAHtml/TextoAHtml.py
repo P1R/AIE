@@ -65,12 +65,12 @@ if __name__ == "__main__":
             if not line: break
 #   verificamos si estamos dentro de parrafo y en dado caso agregamos div con color y letra
             if state == 1:
-                if (line.find(".\n")!=-1):
+                if (line == "\n"):
                     OuFile.writelines(htmtags.getDivend())
                     state=0
 #   verificamos si se salio del parrafo y cerramos el div
             if state == 0:  
-                if (line.find(".\n")!=-1):
+                if (line == "\n"):
                     OuFile.writelines(htmtags.Divs())
                     state=1
                     countp+=1
