@@ -1,0 +1,14 @@
+Background
+
+     In January 2012, an image containing a message stating that the poster was looking for intelligent individuals and inviting users to find a hidden message in the image which would lead them on the road to finding them began making its way across the internet. This image was the first puzzle in the series. The image was reposted by people to other boards and sites, increasing Internet interest in the puzzle. People attempting to solve the puzzles grouped together on the mibbit and n0v4 IRC networks, with splinter groups making use of private IRC channels, forums, and Skype groups.
+     Purpose
+
+     The stated purpose of the puzzles each year has been to recruit "highly intelligent individuals," although the ultimate purpose remains unknown.[1] Some have claimed that Cicada 3301 is a secret society with the goal of improving cryptography, privacy, and anonymity.
+     Resolution
+
+     The ultimate outcome of all three rounds of Cicada 3301 recruiting is still a mystery. The final known puzzles became both highly complex and individualized as the game unfolded. Anonymous individuals have claimed to have "won", but verification from the organization was never made and the individuals making the claim have not been forthcoming with information.
+
+     An email that was reportedly sent to some individuals who completed the 2012 puzzle, revealing that those who successfully solved the puzzles were given a personality assessment. Those who passed this stage were reportedly admitted into the organization, although nothing more is known.
+     Types of clues
+
+     The Cicada 3301 clues have spanned many different communication mediums including Internet, telephone, original music, bootable Linux CDs, digital images, physical paper signs, and pages of unpublished cryptic books. In addition to using many varying techniques to encrypt, encode or hide data, these clues also have referenced a wide variety of books, poetry, artwork and music.[1] Each clue has been signed by the same GnuPG private key to confirm authenticity.

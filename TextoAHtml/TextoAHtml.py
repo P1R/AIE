@@ -33,7 +33,7 @@ class htm:
         return "#%s" % "".join([hex(randrange(0, 255))[2:] for i in range(3)])
 #   Agregador de etiquetas con llamando a la funcion para colores aleatorios en CSS
     def Divs(self):
-        return "<div style='color:"+self.HexRand()+"; background-color:"+self.HexRand()+";'>"
+        return "<div style='background-color:"+self.HexRand()+";'>"
     def getDivend(self):
         return self.divend
 
