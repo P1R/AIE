@@ -84,23 +84,24 @@ if __name__ == "__main__":
 #   si ecuentra salto de linea ingresa codigo <br> en html
             if (line == '\n'):
                 OuFile.writelines(htmtags.getBr())
-#   Agregamos seccion donde detecta y colorea oraciones
-#            if (line.find(". ")!=-1):
-#                if(countf!=0):
-#                    OuFile.writelines(htmtags.getFontend())
-#                OuFile.writelines(htmtags.Fonts())
-#                countf+=1
+
 #   cuenta palabras
             countw+=len(line.split())
+#   Agregamos seccion donde detecta y colorea oraciones
+#   separamos la linea en una lista por palabras
             line=line.split()
+#   recorremos la lista, cuando se detecta un punto se agregan etiquetas de color
+#   y se cuenta como oracion
             for i in range(len(line)):
                 if (line[i].find(".")!=-1):
                     line.insert(i+1,htmtags.getFontend())
                     line.insert(i+2,htmtags.Fonts())
                     countf+=1
-                    
+#   se une la lista en una cadena de nuevo y se iguala a linea                    
             line = " ".join(line)
+#   se escriben las lineas en el archivo de salida
             OuFile.writelines(line)
+#   terminado el ciclo de leer todo, se imprimen las variables contadas y el cuerpo de cierre html
         OuFile.writelines(("</div><br><h2> numero de parrafos es:",str(countp+1),"</h2>"))
         OuFile.writelines(("<br><h2> numero de palabras es:",str(countw),"</h2>"))
         OuFile.writelines(("<br><h2> numero de frases es:",str(countf),"</h2>"))
